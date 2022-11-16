@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// https://pve.proxmox.com/wiki/Unprivileged_LXC_containers
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Proxmox LXC id mapper
       </header>
+
+      <div>
+        <p>
+          LXC Container Id: <input />
+        </p>
+        
+        <div>
+          <p># Add to <code>/etc/pve/lxc/103.conf</code></p>
+          <p>lxc.idmap: u 0 100000 65535</p>
+          <p>lxc.idmap: g 0 100000 65535</p>
+
+          <p># Add to <b>/etc/subuid</b></p>
+
+          <p># Add to <b>/etc/subgid</b></p>
+        </div>
+
+      
+      </div>
     </div>
   );
 }
